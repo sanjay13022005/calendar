@@ -1,0 +1,67 @@
+.calendar-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--primary-50) 100%);
+}
+
+.calendar-layout {
+  display: flex;
+  height: calc(100vh - 4rem);
+  position: relative;
+}
+
+.calendar-main {
+  flex: 1;
+  transition: margin-right var(--transition-slow);
+  overflow: hidden;
+}
+
+.calendar-main.with-sidebar {
+  margin-right: 20rem;
+}
+
+.calendar-content {
+  padding: var(--space-6);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.calendar-sidebar {
+  position: fixed;
+  right: 0;
+  top: 4rem;
+  height: calc(100vh - 4rem);
+  width: 20rem;
+  z-index: var(--z-sticky);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .calendar-main.with-sidebar {
+    margin-right: 0;
+  }
+  
+  .calendar-sidebar {
+    width: 18rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-content {
+    padding: var(--space-4);
+  }
+  
+  .calendar-sidebar {
+    width: 100%;
+    right: 0;
+  }
+  
+  .calendar-main.with-sidebar {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .calendar-content {
+    padding: var(--space-2);
+  }
+}
